@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%; /* Negro profundo */
+    --foreground: 48 89% 60%; /* Dorado claro */
+    --card: 0 0% 10%; /* Negro para tarjetas */
+    --card-foreground: 48 89% 60%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 48 89% 60%;
+    --primary: 48 89% 60%; /* Dorado principal */
+    --primary-foreground: 0 0% 10%; /* Negro para texto sobre dorado */
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 48 89% 60%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 48 89% 60%;
+    --accent: 48 89% 80%; /* Dorado más claro */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 48 89% 60%;
+    --input: 0 0% 20%;
+    --ring: 48 89% 60%;
+    --radius: 0.5rem;
+
+    --brand-gold: 48 89% 60%; /* Dorado */
+    --brand-gold-dark: 48 89% 40%; /* Dorado oscuro */
+    --brand-gold-light: 48 89% 80%; /* Dorado claro */
+    --brand-black: 0 0% 6%; /* Negro */
+    --brand-lightgray: 0 0% 20%; /* Gris oscuro */
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 48 89% 60%;
+    --card: 0 0% 10%;
+    --card-foreground: 48 89% 60%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 48 89% 60%;
+    --primary: 48 89% 60%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 48 89% 60%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 48 89% 60%;
+    --accent: 48 89% 80%;
+    --accent-foreground: 0 0% 0%;
+    --border: 48 89% 60%;
+    --input: 0 0% 20%;
+    --ring: 48 89% 60%;
+    --brand-gold: 48 89% 60%;
+    --brand-gold-dark: 48 89% 40%;
+    --brand-gold-light: 48 89% 80%;
+    --brand-black: 0 0% 0%;
+    --brand-lightgray: 0 0% 14.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; 
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-yellow-400;
+  }
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-500 bg-clip-text text-transparent;
+  }
+  .gradient-bg-gold-black {
+    @apply bg-gradient-to-br from-brand-gold-light via-brand-black to-brand-gold-dark;
+  }
+  .gradient-text-gold {
+    background: linear-gradient(90deg, #FFD700, #FFC300, #FFF8DC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+
+/* Custom scrollbar for un look elegante */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--brand-black));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--brand-gold) / 0.7);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--brand-gold));
+}
